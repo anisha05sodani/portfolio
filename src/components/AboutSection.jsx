@@ -2,91 +2,68 @@ import { Briefcase, Code, User } from "lucide-react";
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative">
-      {" "}
+    <section
+      id="about"
+      className="bg-about py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative"
+    >
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          About <span className="text-primary"> Me</span>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center">
+          About <span className="text-primary">Me</span>
         </h2>
+        <div className="w-full flex flex-col items-center justify-center text-center">
+          <User className="w-10 h-10 text-primary mb-4" />
+          <h3 className="text-xl sm:text-2xl font-semibold">
+            Anisha Sodani
+          </h3>
+          <p className="text-sm sm:text-base text-muted-foreground mt-2">
+            Pre-final Year B.Tech Student · CSE @ IIIT Surat
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">
-              Passionate Web Developer & Tech Creator
-            </h3>
+          <div className="mt-6 space-y-6 max-w-2xl px-4">
+            {/* Education */}
+            <div className="flex flex-col items-center text-muted-foreground">
+              <Briefcase className="h-6 w-6 text-primary mb-2" />
+              <p className="text-sm sm:text-base leading-relaxed">
+                Pursuing Bachelor of Technology in Computer Science and Engineering from <br />
+                <strong>Indian Institute of Information Technology, Surat</strong> (2022–2026) <br />
+                <span className="text-xs text-muted-foreground">Current CGPA: 7.51</span>
+              </p>
+            </div>
 
-            <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
-            </p>
+            {/* Interests & Experience */}
+            <div className="flex flex-col items-center text-muted-foreground">
+              <Code className="h-6 w-6 text-primary mb-2" />
+              <p className="text-sm sm:text-base leading-relaxed">
+              I'm a curious and driven developer with a passion for{" "}
+                <strong>Problem-Solving, Data Structures, and Algorithms.</strong> I also explore<strong> AI/ML, IoT, and Full-stack web development</strong>.
+                I enjoy transforming ideas into scalable solutions and thrive
+                in collaborative environments.
 
-            <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
-            </p>
+                  — transforming ideas into scalable solutions and thriving in collaborative environments.
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="#contact" className="cosmic-button">
-                {" "}
-                Get In Touch
-              </a>
-
-              <a
-                href=""
-                className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
-              >
-                Download CV
-              </a>
+              </p>
+              <p className="text-sm sm:text-base leading-relaxed mt-2">
+                Selected among <strong>150+ students</strong> to work on an
+                industry-level project at <strong>STPI Global</strong> on
+                a <em>Face Recognition-Based Attendance Automation System</em>.
+              </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Web Development</h4>
-                  <p className="text-muted-foreground">
-                    Creating responsive websites and web applications with
-                    modern frameworks.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <User className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
-                  <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="h-6 w-6 text-primary" />
-                </div>
-
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
-                  <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile
-                    methodologies.
-                  </p>
-                </div>
-              </div>
-            </div>
+          {/* Call to Action */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-8 justify-center items-center">
+            <a
+              href="#contact"
+              className="cosmic-button text-sm sm:text-base px-6 py-3 w-full sm:w-auto"
+            >
+              Let's Connect
+            </a>
+            <a
+              href="mailto:anishasodani05@gmail.com"
+              className="px-6 py-3 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 text-sm sm:text-base w-full sm:w-auto text-center"
+            >
+              Email Me
+            </a>
           </div>
         </div>
       </div>

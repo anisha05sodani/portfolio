@@ -6,18 +6,28 @@ import { useEffect, useState } from "react";
 export const StarBackground = () => {
   const [stars, setStars] = useState([]);
   const [meteors, setMeteors] = useState([]);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     generateStars();
     generateMeteors();
+    setIsDark(document.documentElement.classList.contains("dark"));
 
     const handleResize = () => {
       generateStars();
     };
+    const handleTheme = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
 
     window.addEventListener("resize", handleResize);
+    const observer = new MutationObserver(handleTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      observer.disconnect();
+    };
   }, []);
 
   const generateStars = () => {
@@ -59,6 +69,9 @@ export const StarBackground = () => {
     setMeteors(newMeteors);
   };
 
+  const starColor = isDark ? "rgba(255,255,255,0.8)" : "rgba(0,0,0,0.7)";
+  const meteorColor = isDark ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.2)";
+
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {stars.map((star) => (
@@ -72,6 +85,9 @@ export const StarBackground = () => {
             top: star.y + "%",
             opacity: star.opacity,
             animationDuration: star.animationDuration + "s",
+            background: starColor,
+            borderRadius: "50%",
+            position: "absolute",
           }}
         />
       ))}
@@ -87,6 +103,12 @@ export const StarBackground = () => {
             top: meteor.y + "%",
             animationDelay: meteor.delay,
             animationDuration: meteor.animationDuration + "s",
+            background: meteorColor,
+            borderRadius: "2px",
+            position: "absolute",
+            boxShadow: isDark
+              ? "0 0 8px 2px rgba(255,255,255,0.3)"
+              : "0 0 8px 2px rgba(0,0,0,0.1)",
           }}
         />
       ))}
