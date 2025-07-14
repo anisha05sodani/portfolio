@@ -1,11 +1,9 @@
-# MY PORTFOLIO
-
-
 # 💼 Anisha Sodani's Portfolio
 
 Welcome to my personal portfolio website! This project showcases my background, projects, skills, and achievements as a software developer and technology enthusiast.
 
-🚀 Live Website: [VISIT](https://portfolio-anisha-sodani.netlify.app/)
+🚀 Live Website: 
+[VISIT](https://portfolio-anisha-sodani.netlify.app/)
 ---
 
 ## 🧠 About Me
@@ -21,6 +19,4 @@ I’m Anisha Sodani, a Final year B.Tech student at IIIT Surat. I'm passionate a
 - **Other:** Git, GitHub, Figma, VS Code
 
 ---
-
-## 📂 Project Structure
 
